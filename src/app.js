@@ -1,19 +1,20 @@
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config();
+const testRoutes = require("./routes/testRoutes");
 
 const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// routes
 app.use("/api/auth", authRoutes);
 
-// Test route
+// test
+app.use("/api/test", testRoutes);
+
 app.get("/", (req, res) => {
   res.send("SecureTodo API is running ");
 });
