@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const testRoutes = require("./routes/testRoutes");
+const todoRoutes = require("./routes/todoRoutes");
 
 const authRoutes = require("./routes/authRoutes");
 
@@ -11,7 +12,7 @@ app.use(express.json());
 
 // routes
 app.use("/api/auth", authRoutes);
-
+app.use("/api/todos", todoRoutes);
 // test
 app.use("/api/test", testRoutes);
 
