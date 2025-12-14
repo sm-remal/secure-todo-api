@@ -13,7 +13,7 @@ app.use(express.json());
 
 //  ROOT ROUTE
 app.get("/", (req, res) => {
-  res.send("SecureTodo API is running 🚀");
+  res.send("SecureTodo API is running");
 });
 
 // routes
