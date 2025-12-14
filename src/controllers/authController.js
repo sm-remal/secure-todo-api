@@ -52,6 +52,12 @@ exports.login = async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
+    if (!user) {
+      res.status(404);
+      throw new Error("User not found"); 
+    }
+
+
     // const isMatch = await user.comparePassword(password);
     const isMatch = await user.matchPassword(password);
 
